@@ -1209,7 +1209,8 @@ struct DotGeneralToDot : public OpRewritePattern<DotGeneralOp> {
 
 void DotGeneralOp::getCanonicalizationPatterns(RewritePatternSet& results,
                                                MLIRContext* context) {
-  results.add<DotGeneralToDot>(context);
+  // Disc perfer to convert DotOp to DotGeneralOp
+  // results.add<DotGeneralToDot>(context);
 }
 
 LogicalResult DotGeneralOp::reifyReturnTypeShapes(
